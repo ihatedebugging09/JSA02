@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Cau1
+        console.log('Cau1');
+        A1 = [1,5,2,3,45,7]
+        for(let i in A1) {
+            console.log(i, ' :',A1[i]);
+        };
+        //Cau2
+        console.log('Cau2');
+        A2 = [1,21,7,2,5,3];
+        var max = 0;
+        var min = A2[1];
+        for(let i in A2){
+            let val = A2[i];
+            max = Math.max(val,max);
+            min = Math.min(val,min);
+        }
+        console.log('Max: ',max," Min: ",min);
+        for(val of A2){
+            max= Math.max(max,val);
+            min = Math.min(min,val)
+        }
+        console.log('Max: ',max,' Min: ',min);
+
+        //Cau3
+        console.log("Cau3");
+        var A3= [1,3,4];
+        var A4= [2,5,6];
+        var A5 = []
+        for(let i in A3){
+            A5.push(A3[i])
+        }
+        for(let i in A4){
+            A5.push(A4[i])
+        }
+        console.log(A5);
+        A5.concat(A3,A4)
+        console.log(A5);
+    </script>
+</body>
+</html>

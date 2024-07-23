@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const UD =[
+            "Hoa",
+            'Phuong',
+            'Nam',
+            'Thien',
+        ];
+        console.log(UD);
+        localStorage.setItem(UD,JSON.stringify(UD));
+        var UL = JSON.parse(localStorage.getItem(UD));
+        name = prompt('Nhap ten user can update');
+        newname = prompt('Nhap ten user moi')
+        for(let i in UL){
+            if (UL[i] == name){
+                UL[i] = newname;
+            }
+        };
+        localStorage.setItem(UD,JSON.stringify(UL));
+        console.log(UL);
+        var name = prompt("Type a name to delete");
+        UL = JSON.parse(localStorage.getItem(UD));
+        for(let i in UL){
+            if(UL[i] == name){
+                UL.splice(i,1);
+            }
+        };
+        localStorage.setItem(UD,JSON.stringify(UL));
+        console.log(UL);
+        localStorage.removeItem(UD);        
+    </script>
+</body>
+</html>

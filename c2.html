@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thoi gian con lai</h1>
+    <h1 id="timeleft">10</h1>
+    <script>
+        var timer= document.getElementById('timeleft')
+        let i = 1;
+        setInterval(function() {
+            timer.innerHTML = 10 - i++;
+            if(i>10){
+                timer.innerHTML = 'Da het thoi gian';                 
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

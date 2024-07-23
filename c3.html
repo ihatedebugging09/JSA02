@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="eimg" src="i1.png" alt="">
+    <script>
+    const img_src =[
+        'i1.png',
+        'i2.png',
+        'i3.png',
+    ]
+    var i=0;
+    setInterval(function(){
+        i++;
+        document.getElementById('eimg').src = img_src[i];
+        if(i>2){
+            i=-1
+        }
+    }
+    , 3000)
+    </script>
+</body>
+</html>

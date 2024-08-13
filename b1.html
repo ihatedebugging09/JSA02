@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li id="container">
+        <ul>
+            <button onclick="ShowContent()">
+                Click here to view the content!
+            </button>
+        </ul>
+    </li>
+<script>
+ShowContent = () => {
+    const URL1 = 'https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST';
+    fetch(URL1)
+    .then((response) => response.json())
+    .then((data) => {
+        var data = data.detail;
+    for(let list of data){
+        for(let key in list){
+            if(key == 'name'){
+                var header = document.createElement('h1');
+                header.innerText = list[key];
+                var container = document.getElementById('container');
+                container.appendChild(header);
+            }else{
+                var text = document.createElement('h3');
+                text.innerText = key + ': ' + list[key];
+                container.appendChild(text)
+            }
+        }
+    }
+    });
+}
+</script>
+</body>
+</html>
